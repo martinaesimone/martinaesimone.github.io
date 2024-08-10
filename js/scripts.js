@@ -848,6 +848,7 @@ var Neela;
                 var $fields = $("input, textarea, select, fieldset", $form);
                 var len = 0;
                 var re = /\S+@\S+\.\S+/;
+                var re_tel_inv = /[^0-9+]/;
                 var html = "contact";
                 var error = false;
                 var showSuccess;
@@ -895,6 +896,9 @@ var Neela;
                             $field.addClass("is-invalid");
                             error = true;
                         } else if ($field.attr("type") === "email" && $field.val() !== "" && re.test($field.val()) === false) {
+                            $field.addClass("is-invalid");
+                            error = true;
+                        } else if ($field.attr("type") === "tel" && $field.val() !== "" && re_tel_inv.test($field.val()) === true) {
                             $field.addClass("is-invalid");
                             error = true;
                         } else if ($field.attr("id") !== "g-recaptcha-response" && $field.attr("id") !== "recaptcha-token") {
@@ -961,23 +965,19 @@ var Neela;
 
                     $.ajax({
                         type: "POST",
-                        url: "contact.php",
+                        url: "http://127.0.0.1:5000/save",
                         data: html,
                         success: function (msg) {
                             stopSpin();
 
-                            if (msg === "ok") {
+                            // if (msg === "ok") {
                                 showSuccess();
                                 $form[0].reset();
-                            } else {
-                                $_self.showError($_self.contactFormRecaptchaErrorMsg);
-                            }
+                            // } else {
+                            //     $_self.showError($_self.contactFormRecaptchaErrorMsg);
+                            // }
 
                             $_self.sendingMail = false;
-
-                            if ($(".g-recaptcha").length) {
-                                grecaptcha.reset();
-                            }
                         },
                         error: function () {
                             stopSpin();

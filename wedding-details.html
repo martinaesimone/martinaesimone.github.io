@@ -172,8 +172,8 @@
 				<div class="row">
 					<div class="about-us-desc col-lg-8 offset-lg-2" data-animation-direction="from-bottom" data-animation-delay="300">
 						<h3><small>Ci stiamo per</small>Sposare</h3>
-						<p>Today and always, beyond tomorrow, I need you beside me, always as my best friend, lover and forever soul mate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt porttitor venenatis. Vestibulum sit amet est nisl. Vestibulum iaculis finibus sem nec condimentum. Quisque nulla orci, aliquet sit amet sem eget, pellentesque euismod enim. Aenean quis nisl at est consequat elementum sed vel turpis. Phasellus dignissim sit amet orci vitae mattis. Phasellus a imperdiet ligula, efficitur dignissim ex. Mauris placerat aliquet sem commodo molestie.</p>
-						<img src="https://via.placeholder.com/300x60.png?text=Signature" alt="Signature">
+						<!--<p>Today and always, beyond tomorrow, I need you beside me, always as my best friend, lover and forever soul mate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt porttitor venenatis. Vestibulum sit amet est nisl. Vestibulum iaculis finibus sem nec condimentum. Quisque nulla orci, aliquet sit amet sem eget, pellentesque euismod enim. Aenean quis nisl at est consequat elementum sed vel turpis. Phasellus dignissim sit amet orci vitae mattis. Phasellus a imperdiet ligula, efficitur dignissim ex. Mauris placerat aliquet sem commodo molestie.</p>
+						<img src="https://via.placeholder.com/300x60.png?text=Signature" alt="Signature">-->
 					</div>
 				</div>
 			</div>
@@ -229,7 +229,7 @@
 										<h2>Martina <small>&</small> Simone</h2>
 										
 										<div class="uppercase">Chiedono l'onore della tua presenza il giorno del loro matrimonio</div>
-										<div class="date">28 dicembre 2024<small>alle ore 11:00</small></div>
+										<div class="date">28 dicembre 2024<small>dalle ore 11:00</small></div>
 										<div class="uppercase">presso la Chiesa di S. Bartolomeo<br>Salita S. Bartolomeo 26, Campobasso</div>
 										
 										<h5>Ricevimento a seguire</h5>
@@ -302,17 +302,26 @@
 								
 								<div class="form-wrapper flowers neela-style">
 									<h1 class="section-title">Parteciperai?</h1>
-									
+									<h6 style="text-align: center;">Ti chiediamo gentilmente di confermare la tua presenza entro il <strong>20 novembre 2024</strong>.</h6><br/>
 									<form id="form-rsvp" method="post" action="#">
-										
 										<div class="form-floating">
-											<input type="text" name="Name" id="name" placeholder="Your Name*" class="form-control required fromName">
-											<label for="name">Nome</label>
+											<textarea id="guestlist" name="Guests" placeholder="Ospiti" class="form-control required" rows="4"></textarea>
+											<label for="message">Nomi (uno per riga)*</label>
 										</div>
 										
 										<div class="form-floating">
-											<input type="email" name="E-mail" id="email" placeholder="E-mail*" class="form-control required fromEmail">
-											<label for="email">E-mail*</label>
+											<input type="tel" name="Telephone" id="telephone" placeholder="Telefono*" class="form-control required" >
+											<label for="email">Un contatto telefonico*</label>
+										</div>
+										
+<!--										<div class="form-floating">
+											<input type="email" name="E-mail" id="email" placeholder="E-mail" class="form-control fromEmail">
+											<label for="email">Un contatto e-mail</label>
+										</div>-->
+										
+										<div class="form-floating">
+											<textarea id="message" name="Intolleranza" placeholder="Intolleranza" class="form-control" rows="4"></textarea>
+											<label for="message">Intolleranze, allergie, altre note</label>
 										</div>
 										
 										<div class="form-check-wrapper">
@@ -327,30 +336,10 @@
 											</div>
 										</div>
 										
-										<div class="form-floating">
-											<select class="form-select" aria-label="Numero di ospiti" name="Number of Guests" id="num_guests">
-												<option value="0">0</option>
-												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>
-												<option value="4">4</option>
-												<option value="5">5</option>
-												<option value="6">6</option>
-												<option value="7">7</option>
-											</select>
-											
-											<label for="num_guests">Numero di ospiti</label>
-										</div>
-										
-										<div class="form-floating">
-											<textarea id="message" name="Message" placeholder="Message" class="form-control" rows="4"></textarea>
-											<label for="message">Intolleranze/allergie</label>
-										</div>
-										
 										<div class="form_status_message"></div>
 										
 										<div class="center">
-											<button type="submit" class="btn btn-primary submit_form">Invia risposta</button>
+											<button type="submit" class="btn btn-primary submit_form">Conferma</button>
 										</div>
 									</form>
 								</div>
@@ -368,8 +357,7 @@
 							<div class="row">
 								<div class="col-md-4">
 									<div class="footer-info left">
-										Sabato 28 dicembre 2024, ore 11:00<br>
-										Chiesa di San Bartolomeo, Campobasso
+										Sabato 28 dicembre 2024, ore 11:00
 									</div>
 								</div>
 								
@@ -381,10 +369,11 @@
 									</div>
 								</div>
 								
-								<!--<div class="col-md-4">
+								<div class="col-md-4">
 									<div class="footer-info right">
+										Chiesa di San Bartolomeo, Campobasso
 									</div>
-								</div>-->
+								</div>
 							</div>
 						</div>
 					</div>

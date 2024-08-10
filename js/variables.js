@@ -24,9 +24,9 @@ var timeline_parallax = true;                   //If false, the timeline items w
 
 
 //CONTACT FORM VARIABLES
-var contact_form_success_msg = "Modulo correttamente inviato! :)";
-var contact_form_error_msg = "Errore nell'invio del messaggio :(";
-var contact_form_recaptcha_error_msg = "Error verifying reCaptcha!";
+var contact_form_success_msg = "Grazie, la risposta è stata inviata con successo! :)";
+var contact_form_error_msg = "Alcuni campi non sono stati compilati correttamente. Riprova!";
+var contact_form_recaptcha_error_msg = "Errore nell'invio del messaggio :(";
 
 
 //COUNTDOWN VARIABLES
