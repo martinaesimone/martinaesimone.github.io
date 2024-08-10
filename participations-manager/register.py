@@ -8,9 +8,12 @@ import uuid
 app = Flask(__name__)
 CORS(app)
 
+if 'PMPWD' not in os.environ:
+    exit(-1)
+
 # Define the directory where requests will be saved
 SAVE_DIR = 'participations'
-PASSWORD = 't(j5NAnc*bVF73'
+PASSWORD = os.environ['PMPWD']
 
 # Ensure the save directory exists
 if not os.path.exists(SAVE_DIR):
