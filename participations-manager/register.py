@@ -36,8 +36,6 @@ def get_all():
     try:
         # Check for the password
         password = request.headers.get('password')
-        print(repr(password))
-        print(repr(PASSWORD))
         if password != PASSWORD:
             return Response('Unauthorized', status=401)
         
@@ -45,9 +43,10 @@ def get_all():
         data_list = []
         for filename in os.listdir(SAVE_DIR):
             filepath = os.path.join(SAVE_DIR, filename)
-            with open(filepath, 'r') as f:
-                data = json.load(f)
-                data_list.append(data)
+            if filepath.endswith(".json"):
+                with open(filepath, 'r') as f:
+                    data = json.load(f)
+                    data_list.append(data)
         
         return jsonify(data_list), 200
     except Exception as e:
