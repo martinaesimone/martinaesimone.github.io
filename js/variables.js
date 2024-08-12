@@ -41,8 +41,8 @@ var countdown_end_msg = "Evento iniziato!";       //Message to display when the 
 var map_canvas_id = "map_canvas";               //The HTML "id" of the map canvas
 var map_color = "#8eaeba";                      //Google map color
 var map_initial_zoom = 11;                      //The initial zoom when Google map loads
-var map_initial_latitude = 41.56246;           //Google map initial Latitude. If "null", the latitude of the first marked will be used
-var map_initial_longitude = 14.65769;        //Google map initial Longitude. If "null", the longitude of the first marked will be used
+var map_initial_latitude = 41.53679;           //Google map initial Latitude. If "null", the latitude of the first marked will be used
+var map_initial_longitude = 14.74077;        //Google map initial Longitude. If "null", the longitude of the first marked will be used
 var use_default_map_style = false;              //If true, default map style will be used
 
 //List of map markers
