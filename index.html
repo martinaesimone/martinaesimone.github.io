@@ -45,7 +45,6 @@
 	
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-3.6.0.min.js"></script>
-    
 </head>
 <body>
 
@@ -314,6 +313,8 @@
 											<label for="email">Un contatto telefonico*</label>
 										</div>
 										
+										<input id="formuid" type="hidden" name="uid" />
+										
 <!--										<div class="form-floating">
 											<input type="email" name="E-mail" id="email" placeholder="E-mail" class="form-control fromEmail">
 											<label for="email">Un contatto e-mail</label>
@@ -413,5 +414,23 @@
 	<script src="js/variables.js"></script>
 	<script src="js/scripts.js"></script>
 	
+	<script>
+		function getNamesFromURL()
+		{
+			var vars = [], hash;
+			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			for(var i = 0; i < hashes.length; i++)
+			{
+				hash = hashes[i].split('=');
+				vars.push(hash[0]);
+				vars[hash[0]] = hash[1];
+			}
+			result = vars['uid'];
+		}
+		
+		$(document).ready(function(){
+			$('#formuid')[0].value = getNamesFromURL();
+		});
+	</script>
 </body>
 </html>
