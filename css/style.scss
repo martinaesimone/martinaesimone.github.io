@@ -152,19 +152,19 @@ $pattern: url('../images/neela-pattern.png');
 
 #bridesmaids,
 #bmiadsgmen{
-	@include background-image-retina("images/foto", 'jpg');
+	@include background-image-retina("../images/foto2", 'jpg');
 }
 
 #groomsmen{
-	@include background-image-retina("images/foto", 'jpg');
+	@include background-image-retina("../images/foto2", 'jpg');
 }
 
 #giftregistry{
-	@include background-image-retina("images/foto", 'jpg');
+	@include background-image-retina("../images/foto2", 'jpg');
 }
 
 .page-header{
-	@include background-image-retina("images/foto", 'jpg');
+	@include background-image-retina("../images/foto2", 'jpg');
 }
 
 #menu-image{
@@ -172,7 +172,7 @@ $pattern: url('../images/neela-pattern.png');
 }
 
 #our-partners{
-	@include background-image-retina("images/foto", 'jpg');
+	@include background-image-retina("../images/foto2", 'jpg');
 }
 
 /* #Typography
