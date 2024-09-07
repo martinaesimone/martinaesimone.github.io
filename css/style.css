@@ -3046,7 +3046,8 @@ section.side-flowers {
   text-align: center; }
   .testimonials .owl-item .item blockquote {
     padding: 20px 75px;
-    position: relative; }
+    position: relative;
+    font-size: large; }
     .testimonials .owl-item .item blockquote::before, .testimonials .owl-item .item blockquote::after {
       content: "“";
       position: absolute;
