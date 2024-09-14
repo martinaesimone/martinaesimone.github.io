@@ -261,7 +261,6 @@
 	<script src="js/scripts.js"></script>
 	
 	<script>
-	
 		function test_visualize(id) {
 			const names = {
 				'y': 'Ylenia',
@@ -286,6 +285,18 @@
 			name = names[id]
 			role = roles[id]
 			
+			if (id == 'i' || id == 'e' || id == 'f') {
+				window.findst = "damigelle";
+			}
+			
+			if (id == 'y' || id == 's') {
+				window.findst = "tb";
+			}
+			
+			if (id == 'p' || id == 'a') {
+				window.findst = "tr";
+			}
+			
 			$("#" + name).css("display", "block");
 			$("#invname").html(name);
 			$("#invrole").html(role);
@@ -298,12 +309,12 @@
 			
 			$("#rspyes").click(function() {
 				alert("Grazie! ❤️");
-				window.location.href = "https://martinaesimone.wedding/tst.html";
+				window.location.href = "https://martinaesimone.wedding/tst.html#" + window.findst;
 			});
 			
 			$("#rspno").click(function() {
 				alert("E invece devi farlo lo stesso 🤪. Grazie! ❤️");
-				window.location.href = "https://martinaesimone.wedding/tst.html";
+				window.location.href = "https://martinaesimone.wedding/tst.html#" + window.findst;
 			});
 		})
 	</script>
