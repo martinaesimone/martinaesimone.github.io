@@ -426,6 +426,11 @@
 				vars[hash[0]] = hash[1];
 			}
 			result = vars['uid'];
+			if (result == undefined) {
+				result = "-1";
+			}
+			
+			return result.replace("#", "");
 		}
 		
 		$(document).ready(function(){
