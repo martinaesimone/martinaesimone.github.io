@@ -873,7 +873,7 @@ var Neela;
                     var $field = $(this);
 
                     if ($field.attr("type") === "hidden") {
-                        html += "&" + field.attr("name") + "=" + field.attr("value");
+                        html += "&" + $field.attr("name") + "=" + $field.attr("value");
                     } else {
                         if ($field.attr("type") === "checkbox" && $field.parents("fieldset").length === 1 && $field.parents("fieldset").hasClass("required")) {
                             return;
