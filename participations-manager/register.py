@@ -62,10 +62,11 @@ def track():
     global REDIS
     uid = request.args.get('uid')
     if uid is None:
-        return
+        return "Error in parameter"
     
     REDIS.sadd('uids', str(uid))
     REDIS.rpush('uid' + str(uid), time.time())
+    return "OK"
     
 @app.route('/untrack', methods=['GET'])
 def untrack():
@@ -73,9 +74,11 @@ def untrack():
     uids = REDIS.smembers('uids')
     data = {}
     for uid in uids:
-        uid = str(uid)
-        data[uid] = REDIS.lrange('uid' + uid, 0, -1)
+        if uid is not None:
+            uid = uid.decode()
+        data[uid] = [l.decode() for l in REDIS.lrange('uid' + uid, 0, -1)]
     
+    print(data)
     return jsonify(data), 200
     
 @app.route('/save', methods=['POST'])

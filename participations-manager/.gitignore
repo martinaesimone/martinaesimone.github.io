@@ -2,3 +2,8 @@
 __pycache__
 venv
 participations/*.json
+bin
+include
+lib64
+lib
+pyvenv.cfg
