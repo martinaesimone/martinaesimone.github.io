@@ -4,11 +4,16 @@ import os
 import json
 from datetime import datetime
 import uuid
+import redis
+import time
+
+REDIS = redis.Redis(host='localhost', port=6379, db=0)
 
 app = Flask(__name__)
 CORS(app)
 
 if 'PMPWD' not in os.environ:
+    print("You need to enter PMPWD env to make this work!")
     exit(-1)
 
 # Define the directory where requests will be saved
@@ -52,6 +57,27 @@ def get_all():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+@app.route('/track', methods=['GET'])
+def track():
+    global REDIS
+    uid = request.args.get('uid')
+    if uid is None:
+        return
+    
+    REDIS.sadd('uids', str(uid))
+    REDIS.rpush('uid' + str(uid), time.time())
+    
+@app.route('/untrack', methods=['GET'])
+def untrack():
+    global REDIS
+    uids = REDIS.smembers('uids')
+    data = {}
+    for uid in uids:
+        uid = str(uid)
+        data[uid] = REDIS.lrange('uid' + uid, 0, -1)
+    
+    return jsonify(data), 200
+    
 @app.route('/save', methods=['POST'])
 def save():
     try:
