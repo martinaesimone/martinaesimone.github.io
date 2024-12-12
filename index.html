@@ -291,8 +291,13 @@
 						<div class="row">
 							<div class="about-us-desc col-lg-8 offset-lg-2" data-animation-direction="from-bottom" data-animation-delay="300">
 								<br/>
-								<h3><small>Pernottamento</small></h3>
-								<p>Se avete l'esigenza di pernottare nei pressi della sara ricevimenti, potete contattare la struttura al numero <a href="tel://+390874716153">0874 716153<a> (Michela o Marco).</p>
+								<h2 class="section-title">Contatti</h2>
+								<h6>
+									Per qualsiasi informazione o comunicazione puoi contattare <a style="text-decoration: underline; font-weight: bolder;" href="https://api.whatsapp.com/send?phone=%2B393891003444" target="_blank">Martina</a> o <a style="text-decoration: underline; font-weight: bolder;" href="https://api.whatsapp.com/send?phone=%2B393385358754" target="_blank">Simone</a>.
+								</h6>
+								<h6>
+									Se hai l'esigenza di pernottare nei pressi della sara ricevimenti, puoi contattare la struttura al numero <a style="text-decoration: underline; font-weight: bolder;" href="tel://+390874716153">0874 716153<a> (Michela o Marco).
+								</h6>
 							</div>
 						</div>
 					</div>
@@ -306,56 +311,8 @@
 						
 						<div class="row">
 							<div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2  col-xxl-6 offset-xxl-3">
-								
 								<div class="form-wrapper flowers neela-style">
-									<h1 class="section-title">Parteciperai?</h1>
-									<h6 style="text-align: center;">Ti chiediamo gentilmente di confermare la tua presenza indicando i nomi dei partecipanti, un contatto telefonico ed eventuali intolleranze/allergie entro il <strong>7 dicembre 2024</strong>.
-									</h6><br/>
-									<form id="form-rsvp" method="post" action="#">
-										<div class="form-floating">
-											<textarea id="guestlist" name="Guests" placeholder="Ospiti" class="form-control required" rows="4"></textarea>
-											<label for="message">Nomi (uno per riga)*</label>
-										</div>
-										
-										<div class="form-floating">
-											<input type="tel" name="Telephone" id="telephone" placeholder="Telefono*" class="form-control required" >
-											<label for="email">Un contatto telefonico*</label>
-										</div>
-										
-										<input id="formuid" type="hidden" name="uid" />
-										
-<!--										<div class="form-floating">
-											<input type="email" name="E-mail" id="email" placeholder="E-mail" class="form-control fromEmail">
-											<label for="email">Un contatto e-mail</label>
-										</div>-->
-										
-										<div class="form-floating">
-											<textarea id="message" name="Intolleranza" placeholder="Intolleranza" class="form-control" rows="4"></textarea>
-											<label for="message">Intolleranze, allergie, altre note</label>
-										</div>
-										
-										<!--<div class="form-check-wrapper">
-											<div class="form-check form-check-inline">
-												<input class="form-check-input required" type="radio" name="Attend wedding" id="attend_wedding_yes">
-												<label for="attend_wedding_yes">Sì, parteciperò.</label>
-											</div>
-											
-											<div class="form-check form-check-inline">
-												<input class="form-check-input required" type="radio" name="Attend wedding" id="attend_wedding_no">
-												<label for="attend_wedding_no">No, non potrò partecipare.</label>
-											</div>
-										</div>-->
-										
-										<div class="form_status_message"></div>
-										
-										<div class="center">
-											<button type="submit" class="btn btn-primary submit_form">Conferma</button>
-											<br/><br/>
-											<h6>
-												Se, invece, non potrai partecipare, faccelo sapere inviando un messaggio a <a style="text-decoration: underline; font-weight: bolder;" href="https://api.whatsapp.com/send?phone=%2B393891003444&text=Ciao%20Martina%2C%20purtroppo%20non%20potr%C3%B2%20partecipare%20al%20vostro%20matrimonio&source=&data=" target="_blank">Martina</a> o a <a style="text-decoration: underline; font-weight: bolder;" href="https://api.whatsapp.com/send?phone=%2B393385358754&text=Ciao%20Simone%2C%20purtroppo%20non%20potr%C3%B2%20partecipare%20al%20vostro%20matrimonio&source=&data=" target="_blank">Simone</a>.
-											</h6>
-										</div>
-									</form>
+									<h1 class="section-title-both">Ti aspettiamo!</h1>
 								</div>
 							</div>
 						</div>
@@ -439,20 +396,17 @@
 				vars[hash[0]] = hash[1];
 			}
 			result = vars['uid'];
-			if (result == undefined) {
-				result = "-1";
-			} else {
-				$.ajax({
-					type: "GET", 
-					url: "https://respond.martinaesimone.wedding/track?uid=" + result
-				});
-			}
+			if (result == undefined)
+				result = -123
 			
-			return result.replace("#", "");
+			$.ajax({
+				type: "GET", 
+				url: "https://respond.martinaesimone.wedding/track?uid=" + result
+			});			
 		}
 		
 		$(document).ready(function(){
-			$('#formuid')[0].value = getNamesFromURL();
+			getNamesFromURL();
 		});
 	</script>
 </body>

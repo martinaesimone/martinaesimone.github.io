@@ -290,6 +290,24 @@ section {
 .section-bg-color {
   background-color: #f9f9f9; }
 
+.section-title-both {
+  float: none;
+  text-align: center;
+  margin: 70px auto 70px;
+  position: relative;
+  padding-bottom: 35px;
+  padding-top: 35px;
+  font-family: "Playfair Display", serif; }
+  .section-title-both.light {
+    color: #012a01; }
+    .section-title-both.light::after {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='189' height='26' viewBox='0 0 189 26'%3E%3Cpath fill='none' fill-rule='evenodd' stroke='%23012a01' stroke-width='1.5px' d='M86.19%2C2.362L96.98%2C13%2C86.19%2C23.634%2C75.4%2C13Z'/%3E%3Cpath fill='none' fill-rule='evenodd' stroke='%23012a01' stroke-width='1.5px' d='M94.985%2C2.362L105.775%2C13%2C94.985%2C23.634%2C84.2%2C13Z'/%3E%3Cpath fill='none' fill-rule='evenodd' stroke='%23012a01' stroke-width='1.5px' d='M103.78%2C2.362L114.57%2C13%2C103.78%2C23.634%2C92.991%2C13Z'/%3E%3Cpath fill-rule='evenodd' fill='%23012a01' d='M120%2C14V13H523v1H120Z'/%3E%3Cpath fill-rule='evenodd' fill='%23012a01' d='M-331%2C14V13H69v1H-331Z'/%3E%3C/svg%3E");
+      -khtml-opacity: 0.5;
+      -moz-opacity: 0.5;
+      opacity: 0.5; }
+  .section-title-both.desc {
+    margin-bottom: 35px; }
+
 .section-title {
   float: none;
   text-align: center;
